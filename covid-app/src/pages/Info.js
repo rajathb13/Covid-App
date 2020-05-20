@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Info extends React.Component{
+class info extends React.Component{
     render(){
         return(
             <div>Info</div>
@@ -8,4 +8,4 @@ class Info extends React.Component{
     }
 }
 
-export default Info
+export default info
