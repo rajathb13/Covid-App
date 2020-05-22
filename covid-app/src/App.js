@@ -7,13 +7,13 @@ import { Layout } from "./components/Layout";
 import { NavigationBar } from "./components/NavigationBar";
 import { Jumbotron } from "./components/Jumbotron";
 import { fetchData } from "./api/ApiService";
-import Charts from './components/Charts';
+import Charts from "./components/Charts";
 import CountryPicker from "./components/CountryPicker";
 
 class App extends React.Component {
   state = {
     data: {},
-    country: '' ,
+    country: "",
   };
 
   async componentDidMount() {
@@ -22,33 +22,30 @@ class App extends React.Component {
     console.log(fetchedData);
   }
 
-  handleCountryChange = async(country) => {
+  handleCountryChange = async (country) => {
     const fetchedData = await fetchData(country);
     this.setState({ data: fetchedData, country: country });
-    console.log(fetchedData)
-  }
+    console.log(fetchedData);
+  };
 
   render() {
-    const {data, country} = this.state;
+    const { data, country } = this.state;
     return (
-      <React.Fragment>
+      <>
         <NavigationBar />
-        <div >
-          <Jumbotron />
-        </div>
-       
-        <Layout>
+        <Jumbotron />
+        <Global data={data} />
+        <CountryPicker handleCountryChange={this.handleCountryChange} />
+        <Charts data={data} country={country} />
+        
           <Router>
-            
+            <Switch>
               <Route exact path="/info" component={Info} />
               <Route exact path="/remedies" component={Remedies} />
-            
+            </Switch>
           </Router>
-        </Layout>
-        <Global data={data} />
-        <CountryPicker handleCountryChange = {this.handleCountryChange} />
-        <Charts data = {data} country = {country}/>
-      </React.Fragment>
+        
+      </>
     );
   }
 }
