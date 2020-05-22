@@ -5,8 +5,8 @@ import CountUp from 'react-countup'
 
 const useStyles = makeStyles({
     root: {
-        minWidth: 400,
-        height: "300px",
+        minWidth: 300,
+        height: "250px",
         top: 100,
         position: "relative",
         borderBottom: "10px solid blue",
@@ -16,8 +16,8 @@ const useStyles = makeStyles({
         
       },
       root2: {
-        minWidth: 400,
-        height: "300px",
+        minWidth: 300,
+        height: "250px",
         top: 100,
         position: "relative",
         borderBottom: "10px solid #1bff00",
@@ -26,8 +26,8 @@ const useStyles = makeStyles({
         width: "fit-content",
       },
       root3: {
-        minWidth: 400,
-        height: "300px",
+        minWidth: 300,
+        height: "250px",
         top: 100,
         position: "relative",
         borderBottom: "10px solid red",
@@ -79,7 +79,7 @@ const Global = ({data: {confirmed, recovered, deaths, lastUpdate}}) => {
   }
   console.log(confirmed);
   return (
-    <Grid container spacing={5} direction="row" justify="center" alignItems="center" >
+    <Grid container spacing={6} direction="row" justify="center" alignItems="center" >
       <Grid item xs='auto' sm='auto' md='auto'>
         <Card className={classes.root} >
           <CardContent>
