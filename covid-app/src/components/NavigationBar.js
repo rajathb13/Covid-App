@@ -5,6 +5,8 @@ import styled from "styled-components";
 const Styles = styled.div`
   .navbar {
     background-color: #222;
+    overflow: hidden,
+     
   }
   .navbar-brand,
   .navbar-nav .nav-link {
@@ -18,11 +20,14 @@ const Styles = styled.div`
 
 export const NavigationBar = () => (
   <Styles>
-    <Navbar expand="lg">
-      <Navbar.Brand href="/">Code Life </Navbar.Brand>
+    <Navbar expand="xl" variant="dark" fixed='top'>
+      <Navbar.Brand href="/">Covid-19 </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav"></Navbar.Toggle>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
+        <Nav.Item>
+            <Nav.Link href="/home">Home</Nav.Link>
+          </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/info">Info</Nav.Link>
           </Nav.Item>

@@ -8,6 +8,7 @@ const Styles = styled.div`
     background: url(${CosmicSky}) no-repeat fixed bottom;
     background-size: cover;
     color: #ccc;
+    overflow: hidden,
     height: 200px;
     postion: realtive;
     z-index: -2;
@@ -17,6 +18,7 @@ const Styles = styled.div`
     background-color: white;
     opacity: 0.6;
     position: absolute;
+    overflow: hidden,
     top: 0;
     left: 0;
     right: 0;
@@ -27,11 +29,11 @@ const Styles = styled.div`
 
 export const Jumbotron = () => (
   <Styles>
-    <Jumbo fluid className="jumbo">
+    <Jumbo fluid className="jumbo" >
       <div className="overlay"></div>
       <Container>
         <h1>Covid-19 Dashboard</h1>
-        <p>Providing real-time data of covid cases</p>
+        <p>Providing Real-Time data of covid cases</p>
       </Container>
     </Jumbo>
   </Styles>
