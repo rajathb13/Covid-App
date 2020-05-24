@@ -29,7 +29,7 @@ const Styles = styled.div`
 
 export const Jumbotron = () => (
   <Styles>
-    <Jumbo fluid className="jumbo" >
+    <Jumbo fluid className="jumbo">
       <div className="overlay"></div>
       <Container>
         <h1>Covid-19 Dashboard</h1>
