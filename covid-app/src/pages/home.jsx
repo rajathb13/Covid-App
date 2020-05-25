@@ -22,6 +22,8 @@ class Home extends React.Component {
     // console.log(fetchedData);
   };
 
+  
+
   render() {
     const { data, country } = this.state;
     return (

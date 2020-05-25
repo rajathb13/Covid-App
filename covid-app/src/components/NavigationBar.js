@@ -29,7 +29,10 @@ export const NavigationBar = () => (
             <Nav.Link href="/home">Home</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/info">Info</Nav.Link>
+          <Nav.Link href="/india">India</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+          <Nav.Link href="/info">Info</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/remedies">Remedies</Nav.Link>
