@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const url = "https://covid19.mathdro.id/api";
-const url2 = "http://covid19-india-adhikansh.herokuapp.com/states";
+const url2 = "http://covid19-india-adhikansh.herokuapp.com";
+
+
 
 export const fetchData = async (country) => {
   let changableURL = url;
@@ -41,20 +43,23 @@ export const fetchCountries = async () => {
   } catch (error) {}
 };
 
-export const fetchOneState = async() => {
-  let num = 0;
+export const fetchOneState = async(state) => {
+  let changeableURL2 = `${url2}/state/Karnataka`
+  if(state){
+    changeableURL2 = `${url2}/state/${state}`
+  }
   try {
-    const {data: {state: {name}}} = await axios.get(url2);
-    console.log({data: {state: {name}}})
-    return (num);
+    const {data: {data: {0 : {confirmed, cured, death}}}} = await axios.get(changeableURL2);
+   // console.log({confirmed, cured, death})
+    return ({confirmed, cured, death});
   } catch (error) {}
 };
 
 
-export const fetchIndia = async () => {
+export const fetchIndia = async (state) => {
   try {
-    const {data:{state}} = await axios.get(url2);
-    console.log({data:{state}});
+    const {data:{state}} = await axios.get(`${url2}/states`);
+    //console.log({data:{state}});
     return state.map((state) => state.name)
     
     

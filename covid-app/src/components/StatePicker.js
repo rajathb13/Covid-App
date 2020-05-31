@@ -11,17 +11,18 @@ const StatePicker = ({handleStateChange}) => {
     useEffect(() => {
         const fetchAPI = async() => {
             setFetchedStates(await fetchIndia())
+            
         }
         fetchAPI();
     },[setFetchedStates]);
 
-   // console.log(fetchedCountries)
+    //console.log()
 
   return (
       <div className={styles.formControl}>
     <FormControl >
       <NativeSelect defaultValue = '' onChange={(e) => handleStateChange(e.target.value)}>
-        <option value="">Choose a state</option>
+        <option value="">Karnataka</option>
       {fetchedStates.map((state,i) => <option key = {i} value={state}>{state}</option>)}
       </NativeSelect>
     </FormControl>

@@ -11,6 +11,7 @@ const Styles = styled.div`
     overflow: hidden,
     height: 200px;
     postion: realtive;
+    margin-bottom: 0;
     z-index: -2;
   }
 

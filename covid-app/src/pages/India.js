@@ -74,7 +74,8 @@ const useStyles = makeStyles({
 
 const India = ( {data: { confirmed, cured, death}} ) => {
     const classes = useStyles();
-    console.log(confirmed)
+    let curTime = new Date().toDateString()
+    //console.log(confirmed)
     if (!confirmed) {
         return "loading...";
       }
@@ -103,14 +104,19 @@ const India = ( {data: { confirmed, cured, death}} ) => {
                 className={classes.infected}
                 align="center"
               >
-                Real Data
+                <CountUp
+                start={0}
+                end={confirmed}
+                duration={2}
+                separator=","
+              />
               </Typography>
               <Typography
                 className={classes.pos}
                 color="textSecondary"
                 align="center"
               >
-                Real Date
+                {curTime}
               </Typography>
               <Typography
                 variant="body2"
@@ -140,14 +146,19 @@ const India = ( {data: { confirmed, cured, death}} ) => {
                 className={classes.recovered}
                 align="center"
               >
-                Real Data
+                <CountUp
+                start={0}
+                end={cured}
+                duration={2}
+                separator=","
+              />
               </Typography>
               <Typography
                 className={classes.pos}
                 color="textSecondary"
                 align="center"
               >
-                Real Date
+                {curTime}
               </Typography>
               <Typography
                 variant="body2"
@@ -177,14 +188,19 @@ const India = ( {data: { confirmed, cured, death}} ) => {
                 className={classes.deaths}
                 align="center"
               >
-               Real Data
+               <CountUp
+                start={0}
+                end={death}
+                duration={2}
+                separator=","
+              />
               </Typography>
               <Typography
                 className={classes.pos}
                 color="textSecondary"
                 align="center"
               >
-                Real Date
+                {curTime}
               </Typography>
               <Typography
                 variant="body2"

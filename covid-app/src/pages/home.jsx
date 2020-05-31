@@ -13,16 +13,14 @@ class Home extends React.Component {
   async componentDidMount() {
     const fetchedData = await fetchData();
     this.setState({ data: fetchedData });
-    // console.log(fetchedData);
+    //console.log(fetchedData);
   }
 
   handleCountryChange = async (country) => {
     const fetchedData = await fetchData(country);
     this.setState({ data: fetchedData, country: country });
-    // console.log(fetchedData);
+    console.log(fetchedData);
   };
-
-  
 
   render() {
     const { data, country } = this.state;
