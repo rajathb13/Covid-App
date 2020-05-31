@@ -1,7 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
-import clsx from "clsx";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -11,13 +10,14 @@ import Collapse from "@material-ui/core/Collapse";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { Modal, Button } from "react-bootstrap";
+import gi from '../assets/GeneralInfo.jpg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
     marginTop: 100,
+    hover: "5x 10px 20px 1px rgba(0,0,0,0.253) !important ",
 
     justifyContent: "center",
   },
@@ -151,12 +151,6 @@ export default function RecipeReviewCard() {
   const [modalShow2, setModalShow2] = React.useState(false);
   const [modalShow3, setModalShow3] = React.useState(false);
 
-  let flag = "";
-
-  //   const handleExpandClick = () => {
-  //     setExpanded(!expanded);
-  //   };
-
   return (
     <Grid
       container
@@ -170,7 +164,7 @@ export default function RecipeReviewCard() {
           <CardHeader title="General Information" />
           <CardMedia
             className={classes.media}
-            image="/static/images/cards/paella.jpg"
+            image= {gi}
             title="Paella dish"
           />
           <CardContent>

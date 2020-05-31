@@ -49,9 +49,9 @@ export const fetchOneState = async(state) => {
     changeableURL2 = `${url2}/state/${state}`
   }
   try {
-    const {data: {data: {0 : {confirmed, cured, death}}}} = await axios.get(changeableURL2);
+    const {data: {data: {0 : {active, cured, death}}}} = await axios.get(changeableURL2);
    // console.log({confirmed, cured, death})
-    return ({confirmed, cured, death});
+    return ({active, cured, death});
   } catch (error) {}
 };
 

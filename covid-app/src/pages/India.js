@@ -72,11 +72,11 @@ const useStyles = makeStyles({
     },
   });
 
-const India = ( {data: { confirmed, cured, death}} ) => {
+const India = ( {data: { active, cured, death}} ) => {
     const classes = useStyles();
     let curTime = new Date().toDateString()
     //console.log(confirmed)
-    if (!confirmed) {
+    if (!active) {
         return "loading...";
       }
     return(
@@ -106,7 +106,7 @@ const India = ( {data: { confirmed, cured, death}} ) => {
               >
                 <CountUp
                 start={0}
-                end={confirmed}
+                end={active}
                 duration={2}
                 separator=","
               />
